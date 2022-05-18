@@ -15,7 +15,7 @@ You can install the development version of rubintools like so:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("Jean-Rubin/hhsim")
+devtools::install_github("Jean-Rubin/rubintools")
 ```
 
 ## Example
@@ -26,9 +26,13 @@ Here are some example of functions you can use
 library(rubintools)
 ## basic example code
 x <- 1:20
-y <- list(a = x, b = x)
+y <- list(a = x)
+z <- rep(x, 4)
 
 ls_memory()
-#>       units 
-#> "112 bytes"
+#>           x           z           y 
+#> "176 bytes" "368 bytes" "456 bytes"
+
+total_memory()
+#> [1] "1000 bytes"
 ```

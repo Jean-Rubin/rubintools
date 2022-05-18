@@ -2,8 +2,7 @@ Package: rubintools
 Title: Personal Collection of Helper Functions
 Version: 0.0.0.9000
 Authors@R: 
-    person("Jean", "Rubin", , "jean.rubin@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+    person("Jean", "Rubin", , "jean.rubin@example.com", role = c("aut", "cre"))
 Description: Personal collection of helper functions.
 License: MIT + file LICENSE
 Encoding: UTF-8
