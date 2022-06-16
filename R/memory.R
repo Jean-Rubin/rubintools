@@ -12,7 +12,7 @@
 ls_memory <- function(env = parent.frame(n = 1L), units = "auto") {
   ls(env) |>
     vapply(
-      \(x) utils::object.size(get(x, envir = env)),
+      \(x) lobstr::obj_size(get(x, envir = env)),
       numeric(1L)
     ) |>
     sort() |>
@@ -28,12 +28,7 @@ ls_memory <- function(env = parent.frame(n = 1L), units = "auto") {
 #'
 #' @export
 total_memory <- function(env = parent.frame(n = 1L), units = "auto") {
-  ls(env) |>
-    vapply(
-      \(x) utils::object.size(get(x, envir = env)),
-      numeric(1L)
-    ) |>
-    sum() |>
+  do.call(lobstr::obj_size, lapply(ls(env), as.symbol), envir = env) |>
     structure(class = "object_size") |>
     format(units = units)
 }

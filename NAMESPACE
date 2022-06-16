@@ -2,3 +2,4 @@
 
 export(ls_memory)
 export(total_memory)
+importFrom(lobstr,obj_size)
