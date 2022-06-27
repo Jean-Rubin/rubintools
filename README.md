@@ -29,10 +29,10 @@ x <- 1:20
 y <- list(a = x)
 z <- rep(x, 4)
 
-ls_memory()
+memory_ls()
 #>           z           x           y 
 #> "368 bytes" "856 bytes"    "1.1 Kb"
 
-total_memory()
+memory_total()
 #> [1] "1.5 Kb"
 ```

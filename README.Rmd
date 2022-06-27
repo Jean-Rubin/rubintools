@@ -40,7 +40,7 @@ x <- 1:20
 y <- list(a = x)
 z <- rep(x, 4)
 
-ls_memory()
+memory_ls()
 
-total_memory()
+memory_total()
 ```

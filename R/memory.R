@@ -9,7 +9,7 @@
 #'   It is also possible to select `units = "auto"`.
 #'
 #' @export
-ls_memory <- function(env = parent.frame(n = 1L), units = "auto") {
+memory_ls <- function(env = parent.frame(n = 1L), units = "auto") {
   ls(env) |>
     vapply(
       \(x) lobstr::obj_size(get(x, envir = env)),
@@ -24,10 +24,10 @@ ls_memory <- function(env = parent.frame(n = 1L), units = "auto") {
 
 #' Display the total size used by the current environment
 #'
-#' @inheritParams ls_memory
+#' @inheritParams memory_ls
 #'
 #' @export
-total_memory <- function(env = parent.frame(n = 1L), units = "auto") {
+memory_total <- function(env = parent.frame(n = 1L), units = "auto") {
   do.call(lobstr::obj_size, lapply(ls(env), as.symbol), envir = env) |>
     structure(class = "object_size") |>
     format(units = units)
