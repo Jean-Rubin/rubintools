@@ -8,6 +8,31 @@
 #'
 #' @return A vector of type `numeric`.
 #' @export
+#'
+#' @examples
+#' factor_as_numeric(factor(c("3", "1", "10")))
 factor_as_numeric <- function(x) {
   as.numeric(as.character(x))
+}
+
+#' Create a factor from key value pairs
+#'
+#' Note that if your name-value pairs were already stored as a vector `x`, you
+#' could simply create it with `factor(x, levels = x)`. This is just some
+#' syntactic sugar over this approach.
+#'
+#' @param ... A list of name-value pairs.
+#'
+#' @return A factor
+#' @export
+#'
+#' @examples
+#' create_factor(
+#'   "a" = "A",
+#'   "b" = "B"
+#' )
+create_factor <- function(...) {
+  args <- unlist(list(...))
+
+  factor(args, levels = args)
 }
