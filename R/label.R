@@ -19,7 +19,7 @@
 #'   y = c("d", "e")
 #' )
 #'
-#' label_from_dict(df_ex, dict)
+#' recode_from_dict(df_ex, dict)
 recode_from_dict <- function(dataframe, dict) {
   dataframe |>
     dplyr::mutate(dplyr::across(

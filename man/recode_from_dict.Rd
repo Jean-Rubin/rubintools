@@ -30,5 +30,5 @@ df_ex <- data.frame(
   y = c("d", "e")
 )
 
-label_from_dict(df_ex, dict)
+recode_from_dict(df_ex, dict)
 }

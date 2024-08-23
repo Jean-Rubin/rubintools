@@ -1,4 +1,4 @@
-test_that("label_from_dict() works", {
+test_that("recode_from_dict() works", {
   data_frame <- dplyr::tibble(
     x = c("a", "b"),
     y = c("e", "f")
@@ -10,7 +10,7 @@ test_that("label_from_dict() works", {
   )
 
   expect_identical(
-    label_from_dict(data_frame, dict),
+    recode_from_dict(data_frame, dict),
     dplyr::tibble(
       x = c("a" = "A", "b" = "B"),
       y = c("e" = "E", "f" = "F")
