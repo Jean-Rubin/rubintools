@@ -3,6 +3,7 @@
 export(add_context)
 export(build_switch_project)
 export(create_factor)
+export(dt_tidy_statistics)
 export(factor_as_numeric)
 export(fmt_signif)
 export(labs_dict)
