@@ -33,9 +33,10 @@ devtools::install_github("Jean-Rubin/rubintools")
 
 Here are some example of functions you can use
 
-```{r example}
+### Memory usage
+
+```{r example-memory}
 library(rubintools)
-## basic example code
 x <- 1:20
 y <- list(a = x)
 z <- rep(x, 4)
@@ -44,3 +45,53 @@ memory_ls()
 
 memory_total()
 ```
+
+
+### Data table manipulation
+
+```{r example-data-table}
+dt_example <- data.table::data.table(
+  x = c(1, 1, 1, 1, 2, 2, 2, 2),
+  y = c(1, 2, 3, 4, 5, 6, 7, 8),
+  g = c("a", "a", "a", "a", "b", "b", "b", "b"),
+  w = c("c", "c", "d", "d", "c", "c", "d", "d")
+)
+dt_tidy_statistics(dt_example, c("x", "y"), c("g", "w"), list("mean" = mean))
+```
+
+
+### Formatting number
+
+```{r example-fmt-signif}
+fmt_signif(21.35, 3)
+
+fmt_signif(1.3, 3)
+```
+
+
+### Factor manipulation
+
+```{r example-factor}
+factor_as_numeric(factor(c("3", "1", "10")))
+
+create_factor(
+ "a" = "A",
+ "b" = "B"
+)
+```
+
+
+### Data dictionnary and labels
+
+```{r example-label}
+dict <- list(
+  x = c("a" = "A", "b" = "B", "c" = "C"),
+  y = c("d" = "D", "e" = "E", "f" = "F")
+)
+df_ex <- data.frame(
+  x = c("a", "b"),
+  y = c("d", "e")
+)
+recode_from_dict(df_ex, dict)
+```
+
