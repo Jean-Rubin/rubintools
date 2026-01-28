@@ -50,7 +50,33 @@ dt_example <- data.table::data.table(
   g = c("a", "a", "a", "a", "b", "b", "b", "b"),
   w = c("c", "c", "d", "d", "c", "c", "d", "d")
 )
-dt_tidy_statistics(dt_example, c("x", "y"), c("g", "w"), list("mean" = mean))
+print(dt_example)
+#>        x     y      g      w
+#>    <num> <num> <char> <char>
+#> 1:     1     1      a      c
+#> 2:     1     2      a      c
+#> 3:     1     3      a      d
+#> 4:     1     4      a      d
+#> 5:     2     5      b      c
+#> 6:     2     6      b      c
+#> 7:     2     7      b      d
+#> 8:     2     8      b      d
+```
+
+``` r
+
+dt_tidy <- dt_tidy_statistics(dt_example, c("x", "y"), c("g", "w"), list("mean" = mean))
+print(dt_tidy)
+#>         g      w statistics variable value
+#>    <char> <char>     <char>   <fctr> <num>
+#> 1:      a      c       mean        x   1.0
+#> 2:      a      d       mean        x   1.0
+#> 3:      b      c       mean        x   2.0
+#> 4:      b      d       mean        x   2.0
+#> 5:      a      c       mean        y   1.5
+#> 6:      a      d       mean        y   3.5
+#> 7:      b      c       mean        y   5.5
+#> 8:      b      d       mean        y   7.5
 ```
 
 ### Formatting number

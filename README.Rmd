@@ -56,7 +56,10 @@ dt_example <- data.table::data.table(
   g = c("a", "a", "a", "a", "b", "b", "b", "b"),
   w = c("c", "c", "d", "d", "c", "c", "d", "d")
 )
-dt_tidy_statistics(dt_example, c("x", "y"), c("g", "w"), list("mean" = mean))
+print(dt_example)
+
+dt_tidy <- dt_tidy_statistics(dt_example, c("x", "y"), c("g", "w"), list("mean" = mean))
+print(dt_tidy)
 ```
 
 
